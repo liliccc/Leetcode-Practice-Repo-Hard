@@ -11,13 +11,15 @@ public class ShortestSubarraywithSumatLeastK {
      * @param K: sum
      * @return: the length
      */
+     // prefix sum is not the best solution
     public int shortestSubarray(int[] A, int K) {
         if (A == null || A.length == 0) {
             return -1;
         }
         int[] prefixSums = getPrefixSum(A);
         // binary search on possible answers to find the correct answer
-        int start = 0, end = A.length;
+        // error before: start = 0
+        int start = 1, end = A.length;
         while (start + 1 < end) {
             int mid = start + (end - start) / 2;
             if (isValid(prefixSums, K, mid)) {
@@ -85,7 +87,8 @@ class Heap {
     }
 
     private void lazyDeletion() {
-        if (minheap.size() != 0 && deleteSet.contains(minheap.peek().index)) {
+        // error before: if
+        while (minheap.size() != 0 && deleteSet.contains(minheap.peek().index)) {
             ValueToIndex root = minheap.poll();
             // O(1)
             deleteSet.remove(root.index);
