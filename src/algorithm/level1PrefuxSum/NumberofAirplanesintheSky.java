@@ -12,8 +12,9 @@ public class NumberofAirplanesintheSky {
             return 0;
         }
         // error before: new int[] must be large enough
-        int[] nums = new int[11111];
+        int[] nums = new int[111111];
         int theLastLandingTime = Integer.MIN_VALUE;
+        // construct the nums array to get the prefixSums
         for (int i = 0; i < airplanes.size(); i++) {
             nums[airplanes.get(i).start] += 1;
             nums[airplanes.get(i).end] -= 1;
