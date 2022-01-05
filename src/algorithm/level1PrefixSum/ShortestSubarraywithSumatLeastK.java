@@ -1,4 +1,4 @@
-package algorithm.level1PrefuxSum;
+package algorithm.level1PrefixSum;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

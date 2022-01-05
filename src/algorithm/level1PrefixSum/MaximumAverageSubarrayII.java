@@ -1,4 +1,4 @@
-package algorithm.level1PrefuxSum;
+package algorithm.level1PrefixSum;
 
 public class MaximumAverageSubarrayII {
     /**

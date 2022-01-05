@@ -1,4 +1,4 @@
-package algorithm.level1PrefuxSum;
+package algorithm.level1PrefixSum;
 
 import javax.swing.tree.TreeNode;
 import java.util.List;
