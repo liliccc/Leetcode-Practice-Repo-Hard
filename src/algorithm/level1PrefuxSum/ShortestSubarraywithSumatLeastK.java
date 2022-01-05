@@ -104,7 +104,7 @@ class Heap {
         lazyDeletion();
         minheap.poll();
     }
-
+    // soft delete
     public void delete(int index) {
         deleteSet.add(index);
     }
