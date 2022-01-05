@@ -35,7 +35,41 @@ public class FindWords {
     }
 
     private boolean isSequence(String word, String str, Map<Character, List<Integer>> charToIndexes) {
+        int strIndex = 0, wordIndex = 0;
+        while (strIndex < str.length() && wordIndex < word.length()) {
+            // record the last index in the string
+            // error before
+             strIndex = findNextIndex(word.charAt(wordIndex), strIndex, charToIndexes);
+             if (strIndex == -1) {
+                 break;
+             }
+             wordIndex += 1;
+        }
+        return wordIndex == word.length();
+    }
 
-        return false;
+    private int findNextIndex(char ch, int index, Map<Character, List<Integer>> charToIndexes) {
+        if (!charToIndexes.containsKey(ch)) {
+            return -1;
+        }
+        List<Integer> indexes = charToIndexes.get(ch);
+        int left = 0, right = indexes.size() - 1;
+        while (left + 1 < right) {
+            int mid = left + (right - left) / 2;
+            if (indexes.get(mid) <= index) {
+                left = mid;
+            }
+            else {
+                right = mid;
+            }
+        }
+        // get the leftmost index in the indexes list
+        if (indexes.get(left) >= index) {
+            return indexes.get(left);
+        }
+        if (indexes.get(right) >= index) {
+            return indexes.get(right);
+        }
+        return -1;
     }
 }
