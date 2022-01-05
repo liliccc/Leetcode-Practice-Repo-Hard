@@ -5,6 +5,7 @@ public class BestTimetoBuyandSellStock {
      * @param prices: Given an integer array
      * @return: Maximum profit
      */
+    // greedy algorithm - O(n) - which one is the best, choose that one immediately
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
