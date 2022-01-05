@@ -20,6 +20,7 @@ public class FindWords {
             return results;
         }
         Map<Character, List<Integer>> charToIndexes = new HashMap<>();
+        // save all the indexes of the same character with hashmap
         for (int i = 0; i < str.length(); i++) {
             if (!charToIndexes.containsKey(str.charAt(i))) {
                 charToIndexes.put(str.charAt(i), new ArrayList<>());
