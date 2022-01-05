@@ -6,6 +6,7 @@ public class BestTimetoBuyandSellStock {
      * @return: Maximum profit
      */
     // greedy algorithm - O(n) - which one is the best, choose that one immediately
+    // another solution is dp, which is slower
     public int maxProfit(int[] prices) {
         if (prices == null || prices.length == 0) {
             return 0;
